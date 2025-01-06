@@ -2,8 +2,6 @@ name: masterise_analytics
 description: "A Flutter package that provides analytics services by masterise."
 version: 1.0.0
 homepage:
-authors:
-  - MASTERISER <bien.mai@masterisehomes.com>
 
 environment:
   sdk: ^3.6.0

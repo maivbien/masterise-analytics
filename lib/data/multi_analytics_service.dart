@@ -1,4 +1,5 @@
-import '../../utils/app_util.dart';
+import 'package:flutter/foundation.dart';
+
 import '../domain/analytics_event.dart';
 import '../domain/analytics_screen.dart';
 import '../domain/analytics_service.dart';
@@ -18,8 +19,7 @@ class MultiAnalyticsService implements AnalyticsService {
     await Future.wait(
       _services.map((service) {
         return service.init().catchError((error) {
-          debugPrint
-              .logInfo('Error initializing ${service.providerName}: $error');
+          debugPrint('Error initializing ${service.providerName}: $error');
           return Future.value(); // Continue with other services if one fails
         });
       }),

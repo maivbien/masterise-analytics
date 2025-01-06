@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/app_util.dart';
 import '../data/analytics_performance_info.dart';
 
 abstract class BaseAnalyticsWidget extends StatefulWidget {
@@ -80,7 +79,7 @@ class _BaseAnalyticsWidgetState extends State<BaseAnalyticsWidget>
       // Start DOM processing tracking
       _domProcessingStopwatch.start();
     } catch (e) {
-      debugPrint('Error during performance tracking:', e);
+      debugPrint('Error during performance tracking: $e');
     }
   }
 

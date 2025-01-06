@@ -1,7 +1,7 @@
+import 'package:flutter/foundation.dart';
+import 'package:masterise_analytics/data/string_extension.dart';
 import 'package:matomo_tracker/matomo_tracker.dart';
 
-import '../../../extensions/extensions.dart';
-import '../../../utils/app_util.dart';
 import '../../domain/analytics_event.dart';
 import '../../domain/analytics_screen.dart';
 import '../../domain/analytics_service.dart';
@@ -32,7 +32,7 @@ class MatomoAnalyticsService implements AnalyticsService {
       // await MatomoTracker.trackAppDownload();
       await MatomoTracker.instance.setOptOut(optOut: false);
     } catch (e, s) {
-      debugPrint('matomo_analytics_service.dart -> init', e, s);
+      debugPrint('matomo_analytics_service.dart -> init $e $s');
     }
   }
 
@@ -45,7 +45,7 @@ class MatomoAnalyticsService implements AnalyticsService {
         dimensions: screen.dimensions,
       );
     } catch (e, s) {
-      debugPrint('matomo_analytics_service.dart -> logScreen', e, s);
+      debugPrint('matomo_analytics_service.dart -> logScreen $e $s');
     }
   }
 
@@ -105,7 +105,7 @@ class MatomoAnalyticsService implements AnalyticsService {
         dimensions: model.$2,
       );
     } catch (e, s) {
-      debugPrint('matomo_analytics_service.dart -> logEvent', e, s);
+      debugPrint('matomo_analytics_service.dart -> logEvent $e $s');
     }
   }
 
@@ -118,7 +118,7 @@ class MatomoAnalyticsService implements AnalyticsService {
             PerformanceInfo(onloadTime: Duration(milliseconds: duration)),
       );
     } catch (e, s) {
-      debugPrint('matomo_analytics_service.dart -> logRenderWidget', e, s);
+      debugPrint('matomo_analytics_service.dart -> logRenderWidget $e $s');
     }
   }
 
@@ -133,7 +133,7 @@ class MatomoAnalyticsService implements AnalyticsService {
         await setUserProperty(entry.key, entry.value.toString());
       }
     } catch (e, s) {
-      debugPrint('matomo_analytics_service.dart -> setUser', e, s);
+      debugPrint('matomo_analytics_service.dart -> setUser $e $s');
     }
   }
 
@@ -142,7 +142,7 @@ class MatomoAnalyticsService implements AnalyticsService {
     try {
       MatomoTracker.instance.setVisitorUserId('');
     } catch (e, s) {
-      debugPrint('matomo_analytics_service.dart -> clearUser', e, s);
+      debugPrint('matomo_analytics_service.dart -> clearUser $e $s');
     }
   }
 
@@ -156,7 +156,7 @@ class MatomoAnalyticsService implements AnalyticsService {
         },
       );
     } catch (e, s) {
-      debugPrint('Error setting user property in Matomo:', e, s);
+      debugPrint('Error setting user property in Matomo: $e $s');
     }
   }
 

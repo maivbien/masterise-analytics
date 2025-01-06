@@ -1,5 +1,8 @@
-import '../../utils/app_util.dart';
+import 'package:flutter/foundation.dart';
+import 'package:get_it/get_it.dart';
+
 import '../analytics_manager.dart';
+import '../data/string_extension.dart';
 
 class AnalyticsProperty {
   static const String category = 'category';
@@ -168,9 +171,9 @@ class WarningEvent extends WrappedAnalyticsEvent {
 extension AnalyticsEventX on AnalyticsEvent {
   void log() {
     try {
-      injector<AnalyticsManager>().logEvent(this);
+      GetIt.instance<AnalyticsManager>().logEvent(this);
     } catch (e, s) {
-      debugPrint('AnalyticsEventX', e, s);
+      debugPrint('AnalyticsEventX error: $e\n$s');
     }
   }
 }

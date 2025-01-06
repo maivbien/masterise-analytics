@@ -1,8 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:masterise_analytics/data/string_extension.dart';
 
-import '../../extensions/extensions.dart';
-import '../../../utils/app_util.dart';
 import '../../domain/analytics_event.dart';
 import '../../domain/analytics_screen.dart';
 import '../../domain/analytics_service.dart';
