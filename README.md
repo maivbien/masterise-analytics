@@ -50,6 +50,12 @@ final event = AnalyticsEvent(
 
 
 ## Additional information
+Dependencies:
+    firebase_analytics: ^11.3.6
+    firebase_core: ^3.9.0
+    matomo_tracker: ^6.0.0-dev.1
+    get_it: ^8.0.3
+
 ```dart getDimensionId on matomo
 int _getDimensionId(String key) {
     // Define your mapping here based on Matomo configuration
